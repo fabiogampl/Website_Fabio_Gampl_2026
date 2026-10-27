@@ -18,7 +18,13 @@ layout: layouts/base.njk
       </div>
 
       <div class="meta-block">
-        <p class="meta-label">Details</p>
+        <div class="meta-block-head">
+          <p class="meta-label">Details</p>
+
+          {% if detail.caseStudy %}
+            <a class="meta-download" href="{{ detail.caseStudy }}" download>{{ detail.caseStudyLabel or "Download Full Case Study" }}</a>
+          {% endif %}
+        </div>
 
         <ul class="meta-list">
           {% for c in detail.categories %}
